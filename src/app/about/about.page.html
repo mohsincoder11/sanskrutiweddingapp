@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons color="light" slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons>
+        <ion-title color="light">About </ion-title>
+        <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+    <div class="p-3">
+
+        <div class="mt-3 mb-3" align="center">
+            <img class="logo_img" src="assets/logo1.png" />
+        </div>
+
+        <!-- <div align="center">
+            <ion-label class="text-black text-base font-semibold">About Sanskriti Weddings</ion-label>
+        </div> -->
+
+        <p class="text-sm text-gray-600 text-justify about_us_text" [innerHTML]="about_info">
+            
+        </p>
+    </div>
+    <div class="loader" *ngIf="loader_visibility">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+      </div>
+</ion-content>

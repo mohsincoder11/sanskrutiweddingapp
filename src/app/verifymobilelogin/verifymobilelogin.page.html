@@ -1,0 +1,39 @@
+
+
+<ion-content class="ion-paddding bgcolor">
+  
+  <div class="mt-12 mb-5" align="center">
+    <img class="logo_img" src="assets/logo1.png" />
+    <h1 class="header ion-padding">Please enter OTP sent on your given number </h1>
+  </div>
+  <div class="ion-margin" class="ion-padding pt-4">
+
+    <form #form_login="ngForm">
+
+      <div class="form__div"
+       mode="ios">
+        <input type="number" class="form__input" placeholder=" " ngModel name="otp">
+        <label for="" class="form__label">OTP</label>
+      </div>
+      <ion-text class="error_msg" color="danger" *ngIf="otp_error">Please enter valid OTP.
+      </ion-text>
+      <!-- <p class="text-red-600 text-sm pl-2 error">Error </p> -->
+     
+      <div class="mt-4">
+        <ion-button expand="block" color="primary" (click)="VerifyOTP(form_login)">Verify</ion-button>
+
+           </div>
+    </form>
+
+  </div>
+  <div align="center">
+    <p class="text-xs text-gray-600 p-1" (click)="resend_otp()" *ngIf="time==0">Didn't receive code ?  <span class="primary-color">Resend</span> </p>
+    <p class="text-xs text-gray-600 p-1" *ngIf="time>0"> Didn't receive code? Resend  <span style="color: var(--ion-color-primary);"> 00:{{time}}</span> </p>
+</div>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

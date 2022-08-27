@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Career & Education </ion-title>
+    <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-margin" class="ion-padding pt-4">
+
+
+    <form #careerform="ngForm" >
+      <input type="hidden" name="id" [ngModel]="user_info.id">
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="education_category_id" (ionChange)="filter_education($event)" [ngModel]="user_info.education_category_id">
+          
+        <ion-select-option value="">Select Education Category</ion-select-option>
+        <ion-select-option value="{{ec.id}}" *ngFor="let ec of education_category;">{{ec.id}} {{user_info.education_category_id}} {{ec.education_category_name}}</ion-select-option>
+  
+        </ion-select>
+        <label for="" class="form__label">Select Education Category</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="education_id" [ngModel]="user_info.education_id">
+
+        <ion-select-option value="">Select Education</ion-select-option>
+        <ion-select-option value="{{e.id}}" *ngFor="let e of education_updated;">{{e.education_name}}</ion-select-option>
+  
+        </ion-select>
+        <label for="" class="form__label">Select Education </label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="occupation_category_id" (ionChange)="filter_occupation($event)" [ngModel]="user_info.occupation_category_id">
+          <ion-select-option value="">Select Occupation Category</ion-select-option>
+          <ion-select-option value="{{e.id}}" *ngFor="let e of occupation_category;">{{e.occupation_category_name}}</ion-select-option>  
+
+        </ion-select>
+        <label for="" class="form__label">Select Occupation Category</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="occupation_id" [ngModel]="user_info.occupation_id">
+          <ion-select-option value="">Select Occupation</ion-select-option>
+          <ion-select-option value="{{e.id}}" *ngFor="let e of occupation_updated;">{{e.occupation_name}}</ion-select-option>  
+
+        </ion-select>
+
+        <label for="" class="form__label">Select Occupation </label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <input type="text" class="form__input" placeholder=" " name="company_name" [ngModel]="user_info.company_name">
+        <label for="" class="form__label">Company Name Current</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+           <ion-select class="form__input" name="annual_income" [ngModel]="user_info.annual_income">
+          <ion-select-option value="">Select Annual Income</ion-select-option>
+          <ion-select-option value="{{a}}" *ngFor="let a of annual_income;">{{a}}</ion-select-option>  
+
+        </ion-select>
+        <label for="" class="form__label">Select Annual Income</label>
+      </div>
+
+      <ion-button expand="block" color="primary " (click)="submit_form(careerform)">Submit</ion-button>
+    </form>
+  </div>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+
+
+</ion-content>

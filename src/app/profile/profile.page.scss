@@ -1,0 +1,39 @@
+.thumb {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+
+}
+
+.thumb img {
+    height: 100%;
+    width: auto;
+}
+
+.img1 {
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.upload_div{
+   border: 1px solid #f7fafc;
+   border-radius: 5%;
+
+   label{
+       font-size:0.8em;
+   }
+
+}
+.trash_icon{
+    position:absolute;
+    top:0.8em;
+    right:1.5em;
+    color:var(--ion-color-danger);
+    font-size:1em;
+    border:1px solid var(--ion-color-danger);
+    padding:0.2em;
+    border-radius: 1.2em;
+    background-color: #fff;
+}

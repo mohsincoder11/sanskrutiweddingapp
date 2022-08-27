@@ -1,0 +1,43 @@
+
+  
+  .thumb {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumb img {
+    height: 100%;
+    width: auto;
+}
+
+.profile_div {
+    // background: linear-gradient(90deg, #4BE3C1, #1E9EEB);
+   // background-image: linear-gradient(to right, #FD4F32 0%, #FD4F32 5%, #F03D4E 100%);
+   
+}
+.bottom_border{
+    height:1px;
+    background-color:var(--ion-color-primary);
+    width: 90%;margin-left:5%;
+}
+.profile_text{
+    color:#656565
+}
+.profile_img{
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+}
+ion-item{
+    margin-bottom: 0.5rem;
+}

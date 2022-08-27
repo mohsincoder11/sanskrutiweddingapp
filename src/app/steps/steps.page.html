@@ -1,0 +1,256 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons color="light" slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons>
+        <ion-title color="light"> How To Use </ion-title>
+        <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="mt-6">
+        <p class="text-black text-xl font-medium text-center p-2">Steps for finding Bride/Groom</p>
+        <div class="mt-6">
+            <ion-slides class="slider " [options]="slideOptions" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+                <ion-slide>
+                    <ion-card class="bg-white rounded-md shadow-md ">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <div align="center">
+                                        <img src="assets/step1.png" />
+                                    </div>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <div>
+                                        <p class="text-gray-800 text-md font-medium pt-2">UNDERSTAND REQUIREMENTS</p>
+                                        <p class=" text-gray-600 text-xs p-2 text-center ">Your Select Service Advisor interacts with you to expectation from a life partner.</p>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card>
+                </ion-slide>
+
+                <ion-slide>
+                    <ion-card class="bg-white rounded-md shadow-md">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <div align="center">
+                                        <img src="assets/step2.png" />
+                                    </div>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <div>
+                                        <p class="text-gray-800 text-md font-medium pt-2">PROFILE CREATION</p>
+                                        <p class="text-gray-600 text-xs p-2 text-center">The feedback from the interaction is used to enhance your www.sanskritiweedings.com profile.</p>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card>
+                </ion-slide>
+
+                <ion-slide>
+                    <ion-card class="bg-white rounded-md shadow-md">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <div align="center">
+                                        <img src="assets/step3.png" />
+                                    </div>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <div>
+                                        <p class="text-gray-800 text-md font-medium pt-2">FINDING MATCHES</p>
+                                        <p class="text-gray-600 text-xs p-2 text-center">The best matches are handpicked after screening thousands of profiles are send to you for approval.</p>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card>
+                </ion-slide>
+
+                <ion-slide>
+                    <ion-card class="bg-white rounded-md shadow-md ">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="12">
+                                    <div align="center">
+                                        <img src="assets/step4.png" />
+                                    </div>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <div>
+                                        <p class="text-gray-800 text-md font-medium pt-2">CONNECTING WITH PROSPECTS</p>
+                                        <p class="text-gray-600 text-xs p-2 text-center">After Matches couple providing contact details to send Proposal to Connecting with Prospects.</p>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+        </div>
+    </div>
+
+
+    <!-- 
+    <div>
+        <p class="text-black text-xl font-semibold text-center p-2">Steps for finding Bride/Groom</p>
+        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12">
+                        <div align="center">
+                            <img src="assets/step1.png" />
+                        </div>
+                    </ion-col>
+                    <ion-col size="12">
+                        <div>
+                            <p class="text-gray-800 text-md font-medium pt-2">UNDERSTAND REQUIREMENTS</p>
+                            <p class=" text-gray-600 text-sm p-2 text-center">Your Select Service Advisor interacts with you to expectation from a life partner.</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12">
+                        <div align="center">
+                            <img src="assets/step-2.png" />
+                        </div>
+                    </ion-col>
+                    <ion-col size="12">
+                        <div>
+                            <p class="text-gray-800 text-md font-medium pt-2">PROFILE CREATION</p>
+                            <p class="text-gray-600 text-sm p-2 text-center">The feedback from the interaction is used to enhance your www.sanskritiweedings.com profile.</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12">
+                        <div align="center">
+                            <img src="assets/step3.png" />
+                        </div>
+                    </ion-col>
+                    <ion-col size="12">
+                        <div>
+                            <p class="text-gray-800 text-md font-medium pt-2">FINDING MATCHES</p>
+                            <p class="text-gray-600 text-sm p-2 text-center">The best matches are handpicked after screening thousands of profiles are send to you for approval.</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+        <ion-card>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12">
+                        <div align="center">
+                            <img src="assets/step4.png" />
+                        </div>
+                    </ion-col>
+                    <ion-col size="12">
+                        <div>
+                            <p class="text-gray-800 text-md font-medium pt-2">CONNECTING WITH PROSPECTS</p>
+                            <p class="text-gray-600 text-sm p-2 text-center">After Matches couple providing contact details to send Proposal to Connecting with Prospects.</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card>
+    </div> -->
+
+
+
+    <!-- <div>
+        <div>
+            <p class="text-black text-xl font-semibold text-center p-2">Steps for finding Bride/Groom</p>
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="3">
+                            <div class="bg-red-600 rounded-md  p-2">
+                                <p class="font-medium text-md text-white text-center">Step 1</p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="9">
+                            <div>
+                                <p class="text-gray-700 text-md font-medium pt-2">UNDERSTAND REQUIREMENTS</p>
+                            </div>
+                        </ion-col>
+                        <p class=" text-gray-600 text-sm p-2 ">Your Select Service Advisor interacts with you to expectation from a life partner.</p>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+
+        <div>
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="3 ">
+                            <div class="bg-red-600 rounded-md p-2 ">
+                                <p class="font-medium text-md text-white text-center ">Step 2</p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="9 ">
+                            <div>
+                                <p class="text-gray-700 text-md font-medium pt-2">PROFILE CREATION</p>
+                            </div>
+                        </ion-col>
+                        <p class="text-gray-600 text-sm p-2">The feedback from the interaction is used to enhance your www.sanskritiweedings.com profile.</p>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+
+        <div>
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="3 ">
+                            <div class="bg-red-600 rounded-md p-2 ">
+                                <p class="font-medium text-md text-white text-center ">Step 3</p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="9 ">
+                            <div>
+                                <p class="text-gray-700 text-md font-medium pt-2">FINDING MATCHES</p>
+                            </div>
+                        </ion-col>
+                        <p class="text-gray-600 text-sm p-2">The best matches are handpicked after screening thousands of profiles are send to you for approval.</p>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+
+        <div>
+            <ion-card>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="3 ">
+                            <div class="bg-red-600 rounded-md p-2 ">
+                                <p class="font-medium text-md text-white text-center ">Step 4</p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="9 ">
+                            <div>
+                                <p class="text-gray-700 text-md font-medium pt-2">CONNECTING WITH PROSPECTS</p>
+                            </div>
+                        </ion-col>
+                        <p class="text-gray-600 text-sm p-2">After Matches couple providing contact details to send Proposal to Connecting with Prospects.</p>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </div>
+    </div> -->
+</ion-content>

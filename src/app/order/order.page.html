@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Order </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="p-3">
+  <!-- <ion-card class="bg-white p-2 ">
+    <div class="flex justify-between">
+      <ion-label class="text-lg text-black font-bold ">Basic 5 Months</ion-label>
+      <p> {{ date | date:"mediumDate" }} </p>
+    </div>
+
+    <div class="pt-2">
+      <ion-label class="text-lg text-black font-bold">₹ 2500</ion-label>
+      <ion-label class="pl-3">&nbsp;₹ 0 per month </ion-label>
+    </div>
+  </ion-card> -->
+
+
+  <ion-card class="bg-white p-2 border-l-2 border-pink-600" (click)="order_detail(i)" *ngFor="let o of my_order;let i=index">
+    <div>
+      <p> {{ o.created_at | date:'MMM dd, yy' }} </p>
+    </div>
+    <div class="flex justify-between">
+      <ion-label class="text-lg text-black font-bold">{{o.o_package_name}}</ion-label>
+    </div>
+
+    <div class=" pt-2 pb-1">
+      <ion-label class="text-lg text-black font-bold ">₹ {{o.amount}}</ion-label>
+      <ion-label class="pl-3">&nbsp;₹ {{(o.price/o.o_duration)| number:'1.0-0'}} per month </ion-label>
+    </div>
+    <div class="border-b-2 border-gray-300 "></div>
+    <div class="flex justify-start pt-2">
+      <ion-label>- Send Unlimited Message</ion-label>
+    </div>
+    <div class="flex justify-start">
+      <ion-label>- View upto {{o.o_contacts}} Contact Numbers</ion-label>
+    </div>
+  </ion-card>
+
+  <!-- <ion-card class="bg-white p-2 ">
+    <div class="flex justify-between">
+      <ion-label class="text-lg text-black font-bold">Basic 5 Months</ion-label>
+      <p> {{ date | date:"mediumDate" }} </p>
+    </div>
+    <div class="flex justify-start pt-2">
+      <ion-label>- Send Unlimited Message</ion-label>
+    </div>
+    <div class="flex justify-start">
+      <ion-label>- View upto 12 Contact Numbers</ion-label>
+    </div>
+    <div class="border-b-2 border-gray-300 "></div>
+    <ion-button expand="block" color="primary">
+      ₹ 2500
+    </ion-button>
+  </ion-card> -->
+
+</ion-content>

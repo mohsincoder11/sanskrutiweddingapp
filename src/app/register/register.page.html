@@ -1,0 +1,99 @@
+
+<ion-content>
+  <div class="mt-12 mb-5" align="center">
+    <img class="logo_img" src="assets/logo1.png" />
+    <h1 class="header">Sanskriti<span> Weddings</span> </h1>
+  </div>
+
+  <div class="ion-padding pt-4">
+    <form #form_register="ngForm">
+
+      <div class="ion-margin" class="ion-padding">
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <ion-select class="form__input" ngModel name="created_for" (ionChange)="check_created_for($event)">
+            <ion-select-option value="">Matrimony Profile For </ion-select-option>
+            <ion-select-option value="myself">Myself</ion-select-option>
+            <ion-select-option value="Son">Son</ion-select-option>
+            <ion-select-option value="ps">Daughter</ion-select-option>
+            <ion-select-option value="Brother">Brother</ion-select-option>
+            <ion-select-option value="saturn">Sister</ion-select-option>
+            <ion-select-option value="snes">Friend</ion-select-option>
+            <ion-select-option value="snes">Relative</ion-select-option>
+          </ion-select>
+          <label for="" class="form__label">Matrimony Profile for</label>
+        </div>
+        <p *ngIf="created_for_error"  class="text-red-600 text-sm mb-3 pl-2">Please select matrimony profile for.</p>
+
+       <span *ngIf="created_for_myself">
+         <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+        mode="ios">
+        <ion-select class="form__input" ngModel name="gender">
+          <ion-select-option value="">Select Gender </ion-select-option>
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>         
+        </ion-select>
+        <label for="" class="form__label">Gender</label>
+      </div>
+      <p *ngIf="gender_error"  class="text-red-600 text-sm mb-3 pl-2">Please select gender.</p>
+</span> 
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="text" class="form__input capitalize" placeholder=" " ngModel name="name">
+          <label for="" class="form__label"> Name</label>
+
+        </div>
+        <p *ngIf="name_error" class="text-red-600 text-sm mb-3 pl-2">Please enter name. </p>
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="email" class="form__input" placeholder=" " ngModel name="email">
+          <label for="" class="form__label"> Email</label>
+        </div>
+        <p *ngIf="email_error"  class="text-red-600 text-sm mb-3 pl-2">Please enter email. </p>
+
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="number" class="form__input" placeholder=" " ngModel name="mobile">
+          <label for="" class="form__label"> Mobile Number</label>
+        </div>
+        <p *ngIf="mobile_error"  class="text-red-600 text-sm mb-3 pl-2">Please enter 10 digit mobile number.</p>
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="Password" class="form__input" placeholder=" " ngModel name="password">
+          <label for="" class="form__label"> Create Password</label>
+        </div>
+        <p *ngIf="password_error" class="text-red-600 text-sm mb-3 pl-2">Please enter password. </p>
+
+       
+        <ion-button expand="block" color="success" (click)="selectImage()" class="mb-3"><ion-icon name="cloud-upload-outline"></ion-icon> &nbsp;&nbsp;{{identity_proof_name}}</ion-button>
+    
+      <p *ngIf="id_error" class="text-red-600 text-sm mt-4 mb-3 pl-2">Please upload valid ID proof. </p>
+
+
+        <ion-button expand="block" color="primary" (click)="register_user(form_register)">Register</ion-button>
+        <p class="text-sm text-gray-800 text-center mt-4">Have an account? &nbsp; <span
+          class="text-sm text-600 font-bold primary-color" routerLink="/login">Login Now</span></p>    
+              <p class="text-xs text-gray-700 pt-1 mt-2 text-center">By clicking register free, I agree to the
+          <span class="primary-color" routerLink="/terms"><u>T&C</u></span> and <span class="primary-color" routerLink="/privacy"><u>Privacy Policy</u></span> </p>
+
+      </div>
+    </form>
+
+  </div>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="flex justify-between p-2">
+      <div>
+        <ion-menu-button>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </ion-menu-button>
+      </div>
+      <div class="pl-2">
+        <img src="assets/l3.png"> </div>
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" routerLink="/steps" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <!-- <p class="text-sm text-white">Help</p> -->
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- <ion-searchbar class="searchbar" placeholder="Search " routerLink="/advancesearch"></ion-searchbar> -->
+
+  <div class="p-2">
+    <ion-slides class="slider" [options]="slideOptions11" pager="true" #slider>
+      <ion-slide>
+        <img class="rounded-md" src="assets/6.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img class="rounded-md" src="assets/3.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img class="rounded-md" src="assets/8.jpg" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="p-2">
+    <div class="flex justify-between ">
+      <div>
+        <p class="header_text">{{user_info.gender=='Male' ? 'Bride Profile' : 'Groom Profile'}}
+        </p>
+      </div>
+      <div>
+        <p class="header_text red_text" routerLink="/allprofiles/{{user_info.gender=='Male' ? 'Female' : 'Male'}}">SEE ALL</p>
+      </div>
+    </div>
+   
+      <ion-slides pager="false" [options]="slideOptions" class="main_slider">
+        <ion-slide class="slide_s" *ngFor="let bl of bride_list;let i=index;" routerLink="/brideprofile/{{bl.id}}">
+                   <span class="img_watermark">Sanskriti weddings</span>
+   <ion-card class="doctor_card">
+            <img src="{{url.imageurl}}{{bl.userprofilephoto[0].file_name}}" alt="" *ngIf="bl.userprofilephoto.length>0">
+            <img src="assets/myimage.jpg" alt="" *ngIf="bl.userprofilephoto.length<1">
+            <ion-card-subtitle class="user_name">{{bl.name}}</ion-card-subtitle>
+            <ion-card-subtitle class="user_detail">{{bl.age ? bl.age :''}} {{bl.age && bl.marital_status ? ' |' :''}} 
+              {{bl.age && !bl.marital_status && bl.state  ? ' |' :''}}
+
+              {{bl.marital_status ? bl.marital_status:''}} {{bl.marital_status && bl.state ? ' |' :''}} {{bl.state ? bl.state.state_name : ' &nbsp;'}}
+            </ion-card-subtitle>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
+  </div>
+
+  <div class="p-2">
+    <div class="flex justify-between ">
+      <div>
+        <p class="header_text"> {{user_info.gender=='Male' ? 'Groom Profile' : 'Bride Profile'}}
+        </p>
+      </div>
+      <div>
+        <p class="header_text red_text" routerLink="/allprofiles/{{user_info.gender=='Male' ? 'Male' : 'Female'}}">SEE ALL</p>
+      </div>
+    </div>
+   
+      <ion-slides pager="false" [options]="slideOptions" class="main_slider">
+        <ion-slide class="slide_s" *ngFor="let bl of groom_list;let i=index;" routerLink="/brideprofile/{{bl.id}}">
+          <span class="img_watermark">Sanskriti weddings</span>
+          <ion-card class="doctor_card">
+            <img src="{{url.imageurl}}{{bl.userprofilephoto[0].file_name}}" alt="" *ngIf="bl.userprofilephoto.length>0">
+            <img src="assets/myimage.jpg" alt="" *ngIf="bl.userprofilephoto.length<1">
+            <ion-card-subtitle class="user_name">{{bl.name}}</ion-card-subtitle>
+            <ion-card-subtitle class="user_detail">{{bl.age ? bl.age :''}} {{bl.age && bl.marital_status ? ' |' :''}} 
+              {{bl.age && !bl.marital_status && bl.state  ? ' |' :''}}
+
+              {{bl.marital_status ? bl.marital_status:''}} {{bl.marital_status && bl.state ? ' |' :''}} {{bl.state ? bl.state.state_name : ' &nbsp;'}}
+            </ion-card-subtitle>
+          </ion-card>
+        </ion-slide>
+
+    </ion-slides>
+  </div>
+
+  <div class="p-2">
+    <p class="header_text">Ads</p>
+    <ion-slides class="slider" [options]="slideOptions2" pager="false" #slider
+      (ionSlidesDidLoad2)="slidesDidLoad2(slider)">
+      <ion-slide *ngFor="let adv of slider_detail;" (click)="open_ads(adv.url)">
+        <img src="{{url.imageurl}}{{adv.file_name}}" />
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+
+  <div class="p-2 mb-4">
+    <p class="header_text">Success Stories</p>    
+      <ion-slides pager="false" [options]="slideOptions3" class="main_slider">     
+        <ion-slide class="slide_s" routerLink="/successstory/0">
+          <ion-card class="doctor_card">
+            <img class="img2" src="assets/s11.jpg"  alt="" >
+            <ion-card-subtitle class="user_name">Mohit Kumar weds Mitali Sharma.</ion-card-subtitle>           
+          </ion-card>        
+        </ion-slide>
+        <ion-slide class="slide_s" routerLink="/successstory/1">
+          <ion-card class="doctor_card">
+            <img class="img2" src="assets/s13.jpg"  alt="" >
+            <ion-card-subtitle class="user_name">Prashant Pawar weds Rutuja Kalkhaire.</ion-card-subtitle>           
+          </ion-card>        
+        </ion-slide>
+        <ion-slide class="slide_s" routerLink="/successstory/2">
+          <ion-card class="doctor_card">
+            <img class="img2" src="assets/s15.jpg"  alt="" >
+            <ion-card-subtitle class="user_name">Aditya Kale weds Sneha Mahhale.</ion-card-subtitle>           
+          </ion-card>        
+        </ion-slide>
+      </ion-slides>
+  </div>
+ 
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+
+</ion-content>
+<app-footer></app-footer>

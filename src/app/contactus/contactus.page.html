@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons color="light" slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons>
+        <ion-title color="light"> Contact Us </ion-title>
+        <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class=" bg-red-600 p-2 rounded-md shadow-md " align="center">
+        <p class="text-lg text-white font-semibold text-center">Contact Us</p>
+        <ion-label class="text-sm text-white">Address <b>:</b> Gadchiroli Maharashtra</ion-label><br>
+        <ion-label class="text-sm text-white">Phone <b>:</b> +91 7666254116</ion-label><br>
+        <ion-label class="text-sm text-white">Email <b>:</b> info@sanskritiweddings.com</ion-label><br>
+        <ion-label class="text-sm text-white">Website <b>:</b> www.sanskritiweddings.com</ion-label>
+    </div>
+
+    <div class="mt-4">
+        <p class="text-lg text-black font-semibold text-center">Get In Touch</p>
+
+        <div class="form__div mt-2" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+            <input type="text" class="form__input" placeholder=" ">
+            <label for="" class="form__label">Your Name</label>
+        </div>
+        <div class="form__div " style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+            <input type="email" class="form__input" placeholder=" ">
+            <label for="" class="form__label"> Email</label>
+        </div>
+        <div class="form__div " style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+            <input type="text" class="form__input" placeholder=" ">
+            <label for="" class="form__label">Mobile No</label>
+        </div>
+        <div class="form__div " style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+            <textarea type="text" class="form__input" placeholder=" "></textarea>
+            <label for="" class="form__label">Message</label>
+
+        </div>
+        <ion-button expand="block" color="danger " routerLink="/profile">Submit</ion-button>
+    </div>
+</ion-content>

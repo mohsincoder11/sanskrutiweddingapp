@@ -1,20 +1,106 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar>
+        <div>
+            <div align="center">
+                <img src="assets/l3.png"> </div>
+        </div>
+
+    </ion-toolbar>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+    <ion-searchbar placeholder="Search  " routerLink="/advancesearch"></ion-searchbar>
+    <div class=" p-2 ">
+        <ion-slides class="slider"  pager="false" #slider >
+            <ion-slide>
+                <ion-card class="rounded-md">
+                    <img src="assets/mm1.jpg" />
+                </ion-card>
+            </ion-slide>
+            <ion-slide>
+                <ion-card class="rounded-md">
+                    <img src="assets/mm2.jpg" />
+                </ion-card>
+            </ion-slide>
+            <ion-slide>
+                <ion-card class="rounded-md">
+                    <img src="assets/mm3.jpg" />
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <div>
+        <p class="text-xl font-medium text-black text-center">Registration</p>
+    </div>
+
+
+    <div class="p-2">
+        <ion-card class="p-2 rounded-md">
+            <div class="ion-margin" class="ion-padding">
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <ion-select class="form__input">
+                        <ion-select-option value="nes">Myself</ion-select-option>
+                        <ion-select-option value="n64">Son</ion-select-option>
+                        <ion-select-option value="ps">Daughter</ion-select-option>
+                        <ion-select-option value="genesis">Brother</ion-select-option>
+                        <ion-select-option value="saturn">Sister</ion-select-option>
+                        <ion-select-option value="snes">Friend</ion-select-option>
+                        <ion-select-option value="snes">Relative</ion-select-option>
+                    </ion-select>
+                    <label for="" class="form__label">Matrimony Profile for</label>
+                </div>
+
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <input type="text" class="form__input" placeholder=" ">
+                    <label for="" class="form__label">  Name</label>
+                </div>
+
+
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <input type="email" class="form__input" placeholder=" ">
+                    <label for="" class="form__label"> Email</label>
+                </div>
+
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <input type="number" class="form__input" placeholder=" ">
+                    <label for="" class="form__label"> Mobile Number</label>
+                </div>
+
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <input type="number" class="form__input" placeholder=" ">
+                    <label for="" class="form__label"> Aadhar Number</label>
+                </div>
+
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <input type="number" class="form__input" placeholder=" ">
+                    <label for="" class="form__label"> Pan Number</label>
+                </div>
+                <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+                    <input type="Password" class="form__input" placeholder=" ">
+                    <label for="" class="form__label"> Create Password</label>
+                </div>
+                <ion-button expand="block" color="danger " routerLink="/profile">Register</ion-button>
+                <p class="text-sm text-gray-600 pt-1 text-center" routerLink="/login">Login Here</p>
+                <p class="text-xs text-gray-700 pt-1 text-center">By clicking register free, I agree to the <span><u>T&C</u></span> and <span><u>Privacy Policy</u></span> </p>
+
+            </div>
+        </ion-card>
+    </div>
+
+    <div class="pl-4 pr-4 pb-2">
+        <div class="flex justify-center small-button-fill rounded-md  p-2 " routerLink="/steps">
+            <div>
+                <p class="text-sm text-white text-center ">Steps to find Bride/Groom</p>
+            </div>
+            <div>
+                &nbsp;
+                <ion-icon class="text-xl text-white text-center " name="arrow-forward"></ion-icon>
+            </div>
+        </div>
+    </div>
+
 </ion-content>
+<app-footer></app-footer>

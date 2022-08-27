@@ -1,0 +1,35 @@
+<ion-content class="ion-paddding bgcolor">
+
+  <div class="mt-12 mb-5 ion-padding" align="center">
+    <img class="logo_img" src="assets/logo1.png" />
+    <h1 class="header">Forgot Password?</h1>
+    <h3 class="header">Please enter your mobile number </h3>
+  </div>
+  <div class="ion-margin" class="ion-padding">
+
+    <form #form_login="ngForm">
+
+      <div class="form__div" mode="ios">
+        <input type="number" class="form__input" placeholder=" " ngModel name="mobile">
+        <label for="" class="form__label">Mobile Number</label>
+      </div>
+      <ion-text class="error_msg" color="danger" *ngIf="mobile_error">Please enter valid mobile number.
+      </ion-text>
+      <!-- <p class="text-red-600 text-sm pl-2 error">Error </p> -->
+
+      <div class="mt-4">
+        <ion-button expand="block" color="primary" (click)="send_otp(form_login)">Submit</ion-button>
+        <p class="text-sm text-400 text-center mt-4" routerLink="/login">Cancel</p>
+
+      </div>
+    </form>
+
+  </div>
+
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

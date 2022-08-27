@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Family Details Form </ion-title>
+    <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-margin" class="ion-padding pt-4">
+    <form #family_form="ngForm">
+      <input type="hidden" name="id" [ngModel]="user_info.id">
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="family_type" [ngModel]="user_info.family_type">
+          <ion-select-option value="Matriarchal Family">Matriarchal Family</ion-select-option>
+          <ion-select-option value="Patriarchal Family">Patriarchal Family</ion-select-option>
+          <ion-select-option value="Nuclear Family">Nuclear Family</ion-select-option>
+          <ion-select-option value="Joint Family">Joint Family</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Family Type</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="family_income" [ngModel]="user_info.family_income">
+          <ion-select-option value="0-2 Lacs">0-2 Lacs</ion-select-option>
+          <ion-select-option value="2-5 Lacs">2-5 Lacs</ion-select-option>
+          <ion-select-option value="5-10 Lacs">5-10 Lacs</ion-select-option>
+          <ion-select-option value="10+ Lacs">10+ Lacs</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Family Income</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="sister" [ngModel]="user_info.sister">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+          <ion-select-option value="9">9</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Sister</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="brother" [ngModel]="user_info.brother">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+          <ion-select-option value="9">9</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Brother</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="sister_married" [ngModel]="user_info.sister_married">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+          <ion-select-option value="9">9</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Sister Married</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="brother_married" [ngModel]="user_info.brother_married">
+          <ion-select-option value="1">1</ion-select-option>
+          <ion-select-option value="2">2</ion-select-option>
+          <ion-select-option value="3">3</ion-select-option>
+          <ion-select-option value="4">4</ion-select-option>
+          <ion-select-option value="5">5</ion-select-option>
+          <ion-select-option value="6">6</ion-select-option>
+          <ion-select-option value="7">7</ion-select-option>
+          <ion-select-option value="8">8</ion-select-option>
+          <ion-select-option value="9">9</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Brother Married</label>
+      </div>
+
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="father_occupation" [ngModel]="user_info.father_occupation">
+          <ion-select-option value="Army/Armed Forces">Army/Armed Forces</ion-select-option>
+          <ion-select-option value="Business/Enterprenure">Business/Enterprenure</ion-select-option>
+          <ion-select-option value="Civil Services">Civil Services</ion-select-option>
+          <ion-select-option value="Expired">Expired</ion-select-option>
+          <ion-select-option value="Retired">Retired</ion-select-option>
+          <ion-select-option value="Not Employed">Not Employed</ion-select-option>
+          <ion-select-option value="Service-Govt/PSU">Service-Govt/PSU</ion-select-option>
+          <ion-select-option value="Service-Private">Service-Private</ion-select-option>
+          <ion-select-option value="Teacher">Teacher</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Father Occupation</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="mother_occupation" [ngModel]="user_info.mother_occupation">
+          <ion-select-option value="Army/Armed Forces">Army/Armed Forces</ion-select-option>
+          <ion-select-option value="Business/Enterprenure">Business/Enterprenure</ion-select-option>
+          <ion-select-option value="Civil Services">Civil Services</ion-select-option>
+          <ion-select-option value="Expired">Expired</ion-select-option>
+          <ion-select-option value="Retired">Retired</ion-select-option>
+          <ion-select-option value="Not Employed">Not Employed</ion-select-option>
+          <ion-select-option value="Service-Govt/PSU">Service-Govt/PSU</ion-select-option>
+          <ion-select-option value="Service-Private">Service-Private</ion-select-option>
+          <ion-select-option value="Teacher">Teacher</ion-select-option>
+          <ion-select-option value="Housewife">Housewife</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Mother Occupation</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <textarea type="text" class="form__input" placeholder=" " name="about_myself" [ngModel]="user_info.about_myself"></textarea>
+        <label for="" class="form__label">About Myself</label>
+      </div>
+
+      <ion-button expand="block" color="primary " (click)="submit_form(family_form)">Submit</ion-button>
+
+    </form>
+  </div>
+
+</ion-content>

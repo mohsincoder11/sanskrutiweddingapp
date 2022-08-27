@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons color="light" slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons>
+        <ion-title color="light"> Success Stories</ion-title>
+        <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="mt-5 p-2">
+
+        <ion-slides class="slider" [options]="slideOptions" pager="false" #slider >
+            <ion-slide>
+                <img class="thumb" src="{{image}}" />
+            </ion-slide>
+            <ion-slide>
+                <img class="thumb" src="{{image}}" />
+            </ion-slide>
+            <ion-slide>
+                <img class="thumb" src="{{image}}" />
+            </ion-slide>
+
+        </ion-slides>
+    </div>
+
+    <div class="p-2">
+        <p class="text-md text-black font-semibold pb-2"> {{title}}</p>
+        <p class="desc text-justify">
+           {{description}}.
+        </p>
+    </div>
+</ion-content>

@@ -1,3 +1,76 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" contentId="main" menuClose="left" (ionWillOpen)="get_session_data()">
+    <ion-content>
+
+      <div class=" flex justify-start p-2 profile_div">
+        <div class="mt-1">
+          <img class="profile_img" *ngIf="user_info && user_info.userprofilephoto && user_info.userprofilephoto.length>0" 
+          src="{{url.imageurl}}{{user_info.userprofilephoto[0].file_name}}" alt="">
+          <img class="profile_img" *ngIf="user_info && user_info.userprofilephoto.length<1" class="thumb" src="assets/myimage.jpg" alt="">
+        </div>
+        <div class="ml-3 mt-3 profile_text">
+          <ion-text class="pt-3"><b>{{user_info && user_info.name }}</b><br>
+            <p class="text-sm" *ngIf="user_info && user_info.mobile">+91 {{user_info.mobile}}</p><br>
+          </ion-text>
+        </div>
+      </div>
+      <div class="bottom_border"></div>
+
+      <ion-list class="menu-items" lines="none">
+        <ion-menu-toggle auto-hide="false">
+
+          <ion-item lines="none" routerLink="/dashboard">
+            <ion-icon color="primary" class="text-base" name="grid"></ion-icon>
+            <ion-text color="dark" class="pl-4">Home</ion-text>
+          </ion-item>
+
+          <ion-item routerLink="/profile">
+            <ion-icon color="primary" class="text-base" name="person"></ion-icon>
+            <ion-text color="dark" class="pl-4">Profile</ion-text>
+          </ion-item>
+          <ion-item routerLink="/order">
+            <ion-icon color="primary" class="text-base" name="person"></ion-icon>
+            <ion-text color="dark" class="pl-4">My Subscription</ion-text>
+          </ion-item>
+          <ion-item routerLink="/franchise">
+            <ion-icon color="primary" class="text-base" name="logo-electron"></ion-icon>
+            <ion-text color="dark" class="pl-4">Franchise</ion-text>
+          </ion-item>
+
+          <ion-item routerLink="/about">
+            <ion-icon color="primary" class="text-base" name="information-circle"></ion-icon>
+            <ion-text color="dark" class="pl-4">About Us</ion-text>
+          </ion-item>
+
+          <ion-item routerLink="/contest">
+            <ion-icon color="primary" class="text-base" name="help-circle"></ion-icon>
+            <ion-text color="dark" class="pl-4">Contest</ion-text>
+          </ion-item>
+
+          <ion-item routerLink="/changepassword">
+            <ion-icon color="primary" class="text-base" name="briefcase"></ion-icon>
+            <ion-text color="dark" class="pl-4">Change Password</ion-text>
+          </ion-item>
+
+          <ion-item (click)="socialshare()">
+            <ion-icon color="primary" class="text-base" name="share-social"></ion-icon>
+            <ion-text color="dark" class="pl-4">Share App</ion-text>
+          </ion-item>
+
+          <ion-item (click)="open_playstore()">
+            <ion-icon color="primary" class="text-base" name="star"></ion-icon>
+            <ion-text color="dark" class="pl-4">Rate Us</ion-text>
+          </ion-item>
+
+          <ion-item (click)="log_out()">
+            <ion-icon color="primary" class="text-base" name="log-out"></ion-icon>
+            <ion-text color="dark" class="pl-4">Log Out</ion-text>
+          </ion-item>
+
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main">
+  </ion-router-outlet>
 </ion-app>

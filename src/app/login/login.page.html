@@ -1,0 +1,50 @@
+
+
+<ion-content class="ion-paddding bgcolor">
+  <div class="mt-12 mb-5" align="center">
+    <img class="logo_img" src="assets/logo1.png" />
+    <h1 class="header">Sanskriti<span> Weddings</span> </h1>
+  </div>
+
+  <div class="ion-padding pt-4">
+
+    <form #form_login="ngForm">
+
+      <div class="form__div"
+       mode="ios">
+        <input type="text" class="form__input" placeholder=" " ngModel name="email" id="email"
+          (keyup)="check_email($event)">
+        <label for="" class="form__label">Email Address</label>
+      </div>
+      <ion-text class="error_msg" color="danger" *ngIf="mobile_email">Please enter valid email address.
+      </ion-text>
+      <!-- <p class="text-red-600 text-sm pl-2 error">Error </p> -->
+      <div class="form__div"
+       mode="ios">
+        <input type="password" class="form__input" placeholder=" " ngModel name="password">
+        <label for="" class="form__label">Password</label>
+      </div>
+      
+      <ion-text class="error_msg" color="danger" *ngIf="password">Please enter password.</ion-text>
+
+      <div class="mt-4">
+        <ion-button expand="block" (click)="log_in(form_login)">Sign In</ion-button>
+        <p  class="text-sm text-400 mt-4 primary-color" routerLink="/forgot">Forget Password?</p>
+
+        <p  class="text-sm text-400 text-center mt-4 primary-color" routerLink="/moblogin">Login with OTP</p>
+        <p class="text-sm text-gray-800 text-center mt-4">Don't have an account? &nbsp; <span
+          class="text-sm text-blue-600 font-bold" routerLink="/register">Create Now</span></p>
+          <p class="text-sm text-gray-800 text-center mt-4">Become a partner.&nbsp; <span
+            class="text-sm text-blue-600 font-bold" routerLink="/franchise">Fill Franchise Form</span></p>
+            
+      </div>
+    </form>
+
+  </div>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

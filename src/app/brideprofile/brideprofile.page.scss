@@ -1,0 +1,133 @@
+.img1 {
+    height: 16vh;
+    width: 12vh;
+    object-fit: fill;
+    overflow: hidden;
+    border-radius: 5%;
+}
+.img_watermark{
+  position:absolute;
+  transform:rotate(-90deg);
+  color:#ffffff;
+  width: 16vh;
+  font-size: 0.8rem;
+  display: inline-block;
+  z-index: 9999;
+  top:7rem;
+  right:3rem;
+  opacity: 0.8;
+
+}
+
+ion-button{
+  height: 2rem !important;
+  background-color:transparent !important;
+  color:var(--ion-color-primary);
+}
+
+
+
+.slider_image {
+    display: flex; 
+ //   padding:1em 0;
+    height: 30vh;
+  
+     .slider_img {
+      height: 100%;
+      width: auto;
+    border: 1px solid var(--ion-color-medium2);
+    margin-right: 1em;
+    border-radius: 3%;
+  }
+}
+
+ion-slides { 
+    --bullet-background-active: var(--ion-color-danger); 
+}
+
+
+
+.custom_modal {
+  visibility: hidden;
+  display: none;
+  transition: 0.5s ease-in;
+  background: rgba(255, 255, 255);
+  position: absolute;
+  top: 20vh;
+  left: 2vh;
+  right: 2vh;
+  z-index: 9998;
+  width: 94%;
+  border: 2px solid rgb(226, 226, 226);
+  box-shadow: rgba(72, 164, 255, 0.5) 0px 6px 24px;
+  border-radius: 5px;
+  padding: 2vh 2vh 4vh 2vh;
+  ion-label{
+    display: block;
+    color:#393939;
+    font-weight: bold;
+  }
+}
+.call_email{
+  margin-top:1em;
+  font-size:1em;
+  color:#606060 !important;
+  font-weight: normal !important;
+  ion-icon{
+    font-weight: bold;
+    font-size:1.2em;
+    margin-right: 0.5em;
+  }
+}
+
+.icon_row {
+  float: right;
+  color: var(--ion-color-dark);
+
+  ion-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+
+  100% {
+    -webkit-transform: translateY(-5vh);
+    transform: translateY(-5vh)
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+
+  100% {
+    -webkit-transform: translateY(-5vh);
+    transform: translateY(-5vh)
+  }
+}
+
+.custom_modal.show {
+  -webkit-animation: slide-top .5s cubic-bezier(.25, .46, .45, .94) both;
+  animation: slide-top .5s cubic-bezier(.25, .46, .45, .94) both;
+
+  display: block;
+  position: fixed;
+  // transform: translate(-2%, -30%);
+  visibility: visible;
+}
+
+
+
+.custom_modal.hide {
+  transition: 0.5s ease-in-out;
+  visibility: hidden;
+  display: none;
+}

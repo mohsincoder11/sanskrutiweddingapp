@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Order Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="p-3">
+  <ion-card class="bg-white">
+    <div class="p-2 pt-1">
+      <ion-label class="p-2 bg-pink-200 rounded-sm shadow-md text-pink-600 font-medium">Most Booked</ion-label>
+    </div>
+
+    <div class="flex justify-between pl-2 pt-2 pr-2">
+      <ion-label class="text-lg text-black font-bold"> {{order_details ? order_details.o_package_name :'N/A'}}</ion-label>
+      <p> {{ order_details ? (order_details.created_at | date:'MMM dd, yy')  : 'N/A'}} </p>
+    </div>
+
+    <div class="flex justify-start pl-2 pr-2">
+      <ion-label class="text-lg text-black font-semibold">₹ {{order_details ? order_details.amount : 'N/A'}}</ion-label>
+    </div>
+
+
+    <div class="flex justify-between pt-2 bg-pink-100">
+      <div align="center" class="pl-2 pb-2">
+        <p> Total View</p>
+        <ion-label class="text-sm font-bold text-black">{{order_details ? order_details.o_contacts : 'N/A'}} Contact</ion-label>
+      </div>
+      <div align="center" class="pl-2 pr-2 pb-1">
+        <p> Total Remaining</p>
+        <ion-label class="text-sm font-bold text-black">6 Contact </ion-label>
+      </div>
+    </div>
+  </ion-card>
+  <div class="p-2">
+    <ion-button expand="block" color="primary" routerLink="/packages">
+      Upgrade Package
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,95 @@
+
+ion-content{
+  --ion-background-color:#FFFFFF !important;
+
+}
+img {
+  // filter: saturate(2%);
+  // filter: invert(89%);
+  // filter: brightness(1.25);
+  filter: opacity(0.7);
+  // filter: sepia(10%);
+//   -webkit-filter: hue-rotate(480deg); /* Chrome, Safari, Opera */
+// filter: hue-rotate(480deg);
+}
+
+
+// ====success icons====
+
+/*=== FADE IN  ===*/
+// @-webkit-keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//     transform: none;
+//   }
+//   50% {
+//     opacity: 0.5;
+//     transform: scale(1.2);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
+
+// svg{
+//   position: relative;
+// }
+
+// path{
+// 	-webkit-animation-duration: 0.4s;
+// 	animation-duration: 0.4s;
+// 	-webkit-animation-fill-mode: both;
+// 	animation-fill-mode: both;
+// 	-webkit-animation-delay: 0s;
+// 	-moz-animation-delay: 0s;
+// 	animation-delay: 0s;
+// 	-webkit-animation-name: fadeIn;
+// 	animation-name: fadeIn;
+//   transform-origin: center;
+// }
+
+// @keyframes fill {
+//   from {
+//     height: 0px;
+//   }
+
+//   to {
+
+//   }
+// }
+
+// .left-line {
+// 	-webkit-animation-duration: 0.2s;
+// 	animation-duration: 0.2s;
+// 	-webkit-animation-fill-mode: both;
+// 	animation-fill-mode: both;
+// 	-webkit-animation-delay: 0.25s;
+// 	-moz-animation-delay: 0.25s;
+// 	animation-delay: 0.25s;
+// 	-webkit-animation-name: fill;
+// 	animation-name: fill;
+// }
+
+// .right-line {
+// 	-webkit-animation-duration: 0.5s;
+// 	animation-duration: 0.5s;
+// 	-webkit-animation-fill-mode: both;
+// 	animation-fill-mode: both;
+// 	-webkit-animation-delay: 0.4s;
+// 	-moz-animation-delay: 0.4s;
+// 	animation-delay: 0.4s;
+// 	-webkit-animation-name: fill;
+// 	animation-name: fill;
+// }
+

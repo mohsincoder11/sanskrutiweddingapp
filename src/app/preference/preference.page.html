@@ -1,0 +1,410 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Preference </ion-title>
+    <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class=" p-2 mt-3 ">
+
+    <div class="flex justify-start">
+      <div>
+        <ion-icon class="bg-white rounded-md text-2xl text-black" name="heart-outline"></ion-icon>
+      </div>
+      <div class="pl-2">
+        <ion-label class="text-lg"><b>Interest</b></ion-label>
+      </div>
+    </div>
+    <div class="flex ">
+
+      <div class="flex-1 ">
+
+        <ion-button size="small" expand="block" shape="round" fill="outline" routerLink="/interest/1">
+           {{count ? count.interest_received : ''}} Received
+        </ion-button>
+
+      </div>
+
+      <div class="flex-1  ">
+        <ion-button size="small" expand="block" shape="round" routerLink="/interest/2"><span class="text-white">
+           {{count ? count.interest_sent : ''}} Sent
+        </span></ion-button>
+      </div>
+
+      <div class="flex-1 ">
+        <ion-button size="small" expand="block" shape="round" fill="outline" routerLink="/interest/3">
+           {{count ? count.interest_accept : ''}} Accepted
+        </ion-button>
+      </div>
+
+    </div>
+  </ion-card>
+  <ion-card class=" p-2 mt-5">
+    <div class="flex justify-start">
+      <div>
+        <ion-icon class="bg-white rounded-md text-2xl text-black" name="list-outline"></ion-icon>
+      </div>
+      <div class="pl-2">
+        <ion-label class="text-lg"><b>Shortlist</b></ion-label>
+      </div>
+    </div>
+    <div class="flex ">
+      <div class="flex-1 ">
+
+      
+          <ion-button size="small" expand="block" shape="round" fill="outline" routerLink="/shortlist/1">
+            {{count ? count.shortlist_to_me : ''}} Shortlisted Me
+         </ion-button>
+      </div>
+      <div class="flex-1 ">
+        <ion-button size="small" expand="block" shape="round" routerLink="/shortlist/2"><span class="text-white">
+            {{count ? count.shortlist_by_me : ''}} Shortlisted By Me</span>
+         </ion-button>
+      </div>
+
+    </div>
+  </ion-card>
+  <ion-card class=" p-2 mt-5">
+    <div class="flex justify-start">
+      <div>
+        <ion-icon class="bg-white rounded-md text-2xl text-black" name="call-outline"></ion-icon>
+      </div>
+      <div class="pl-2">
+        <ion-label class="text-lg"><b>Contact</b></ion-label>
+      </div>
+    </div>
+    <div class="flex ">
+      <div class="flex-1 ">
+
+        
+          <ion-button size="small" expand="block" shape="round" fill="outline" routerLink="/contact/1">
+            {{count ? count.contact_to_me : ''}} Contact Me
+         </ion-button>
+      </div>
+      <div class="flex-1 ">
+        <ion-button size="small" expand="block" shape="round" routerLink="/contact/2"> <span class="text-white">
+            {{count ? count.contact_by_me : ''}} Contact By Me</span>
+         </ion-button>
+      </div>
+    </div>
+
+  </ion-card>
+
+
+  <!-- <div class="ion-margin" class="ion-padding pt-4 ">
+        <p class="text-md text-black font-bold">Basic<br>
+        </p>
+        <p class="pt-3">
+            Age
+        </p><br>
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">25</ion-select-option>
+                <ion-select-option value="n64">26</ion-select-option>
+                <ion-select-option value="ps">28</ion-select-option>
+                <ion-select-option value="nes">21</ion-select-option>
+                <ion-select-option value="n64">23</ion-select-option>
+                <ion-select-option value="ps">30</ion-select-option>
+            </ion-select>
+            <label for="" class="form__label">Select max Age</label>
+        </div>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">25</ion-select-option>
+                <ion-select-option value="n64">26</ion-select-option>
+                <ion-select-option value="ps">28</ion-select-option>
+                <ion-select-option value="nes">21</ion-select-option>
+                <ion-select-option value="n64">23</ion-select-option>
+                <ion-select-option value="ps">30</ion-select-option>
+
+
+            </ion-select>
+            <label for="" class="form__label">Select min Age</label>
+        </div>
+
+
+
+        <p class="pt-1">
+            Height
+        </p><br>
+
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">5.12</ion-select-option>
+                <ion-select-option value="n64">4.9</ion-select-option>
+                <ion-select-option value="ps">5.2</ion-select-option>
+                <ion-select-option value="genesis">5.5</ion-select-option>
+                <ion-select-option value="saturn">5.3</ion-select-option>
+
+
+            </ion-select>
+            <label for="" class="form__label">Select max Height</label>
+        </div>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">5.12</ion-select-option>
+                <ion-select-option value="n64">4.9</ion-select-option>
+                <ion-select-option value="ps">5.2</ion-select-option>
+                <ion-select-option value="genesis">5.5</ion-select-option>
+                <ion-select-option value="saturn">5.3</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select min Height</label>
+        </div>
+
+        <p class="pt-1">
+            Marital Status
+        </p><br>
+
+
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+                <ion-select-option value="nes">Anulled</ion-select-option>
+                <ion-select-option value="n64">Never married</ion-select-option>
+                <ion-select-option value="ps">Divorced</ion-select-option>
+                <ion-select-option value="genesis">Widowed</ion-select-option>
+                <ion-select-option value="saturn">Awaiting Divorce</ion-select-option>
+
+
+            </ion-select>
+            <label for="" class="form__label"></label>
+        </div>
+
+
+        <div>
+            <button class="b1" class="mt-3 text-white bg-red-600 px-12 py-2 rounded-lg " style="width: 100% ;  " routerLink="/weddingdashboard">Submit</button>
+        </div>
+    </div>
+
+
+    <div class="ion-margin" class="ion-padding pt-4  mt-3">
+        <p class="text-md text-black font-bold">Religion & Ethnicity</p><br>
+
+        <p class="pt-1">
+            Religion
+        </p><br>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Hindu</ion-select-option>
+                <ion-select-option value="n64">Sikh</ion-select-option>
+                <ion-select-option value="ps">Muslim</ion-select-option>
+                <ion-select-option value="genesis">Buddhist</ion-select-option>
+                <ion-select-option value="saturn">Jain</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Religion</label>
+        </div>
+
+        <p class="pt-1">
+            Caste
+        </p><br>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Mali</ion-select-option>
+                <ion-select-option value="n64">Kunbi</ion-select-option>
+                <ion-select-option value="ps">Teli</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Caste</label>
+        </div>
+
+        <p class="pt-1">
+            Mother Tongue
+        </p><br>
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Mali</ion-select-option>
+                <ion-select-option value="n64">Kunbi</ion-select-option>
+                <ion-select-option value="ps">Teli</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Mother Tongue</label>
+        </div>
+
+
+        <p class="pt-1">
+            Manglik
+        </p><br>
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Manglik</ion-select-option>
+                <ion-select-option value="n64">Non Manglik</ion-select-option>
+                <ion-select-option value="ps">Angshik(partial)</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Manglik</label>
+        </div>
+        <div>
+            <button class="b1" class="mt-3 text-white bg-red-600 px-12 py-2 rounded-lg " style="width: 100% ;  " routerLink="/weddingdashboard">Submit</button>
+        </div>
+    </div>
+
+
+    <div class="ion-margin" class="ion-padding pt-4  mt-3">
+        <p class="text-md text-black font-bold"> Highest Education</p>
+
+
+        <p class="pt-1">
+            Education
+        </p><br>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Science</ion-select-option>
+                <ion-select-option value="n64">Commerce</ion-select-option>
+                <ion-select-option value="ps">Art</ion-select-option>
+                <ion-select-option value="genesis">Bachelor in Education</ion-select-option>
+                <ion-select-option value="saturn">Bachelor in Computer Application</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Education </label>
+        </div>
+        <p class="pt-1">
+            Employed in
+        </p><br>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Army/Armed Forces</ion-select-option>
+                <ion-select-option value="n64">Business/Enterprenure</ion-select-option>
+                <ion-select-option value="ps">Civil Services</ion-select-option>
+                <ion-select-option value="genesis">Expired</ion-select-option>
+                <ion-select-option value="saturn">Retired</ion-select-option>
+
+
+            </ion-select>
+            <label for="" class="form__label">Select Employee</label>
+        </div>
+
+        <p class="pt-1">
+            Occupation
+        </p><br>
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Science</ion-select-option>
+                <ion-select-option value="n64">Commerce</ion-select-option>
+                <ion-select-option value="ps">Art</ion-select-option>
+                <ion-select-option value="genesis">Bachelor in Education</ion-select-option>
+                <ion-select-option value="saturn">Bachelor in Computer Application</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Occupation</label>
+        </div>
+
+        <p class="pt-1">
+            Income
+        </p><br>
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">1 Lac</ion-select-option>
+                <ion-select-option value="n64">2.5 Lac</ion-select-option>
+                <ion-select-option value="ps">5 Lac</ion-select-option>
+                <ion-select-option value="genesis">8 Lac</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Annual Income</label>
+        </div>
+        <div>
+            <button class="b1" class="mt-3 text-white bg-red-600 px-12 py-2 rounded-lg " style="width: 100% ;  " routerLink="/weddingdashboard">Submit</button>
+        </div>
+    </div>
+
+
+    <div class="ion-margin" class="ion-padding pt-4  mt-3">
+        <p class="text-md text-black font-bold"> Lifestyle</p>
+        <p class="pt-1">
+            Diet Type
+        </p><br>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Vegetarian</ion-select-option>
+                <ion-select-option value="n64">Non-Vegetarian</ion-select-option>
+                <ion-select-option value="ps">Eggetarian</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Diet Type</label>
+        </div>
+
+        <p class="pt-1">
+            Drink Type
+        </p><br>
+
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Yes</ion-select-option>
+                <ion-select-option value="n64">No</ion-select-option>
+                <ion-select-option value="ps">Occasionally</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Drink Type</label>
+        </div>
+
+
+        <p class="pt-1">
+            Smoke Type
+        </p><br>
+        <div class="form__div" style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+            <ion-select class="form__input">
+
+                <ion-select-option value="nes">Yes</ion-select-option>
+                <ion-select-option value="n64">No</ion-select-option>
+                <ion-select-option value="ps">Occasionally</ion-select-option>
+
+            </ion-select>
+            <label for="" class="form__label">Select Smoke Type</label>
+        </div>
+
+        <div>
+            <button class="b1" class="mt-3 text-white bg-red-600 px-12 py-2 rounded-lg " style="width: 100% ;  " routerLink="/weddingdashboard">Submit</button>
+        </div>
+    </div> -->
+
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

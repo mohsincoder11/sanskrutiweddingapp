@@ -1,0 +1,221 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #filter_form="ngForm">
+
+    <div class="h-full mb-10">
+
+      <ion-grid class="h-full bg-green-500" style="height: 100% !important;" fixed class="ion-no-padding">
+        <ion-row class="h-full ">
+          <ion-col class="h-full" size="5" class="bg-gray-300">
+            <ion-row>
+              <ion-col size="12" (click)="change_view('caste')" align="center" [ngClass]="{'bg-white': type==='caste'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="location-outline"></ion-icon><br>
+                    Caste
+                  </ion-label>
+                </div>
+              </ion-col>
+
+              <ion-col (click)="change_view('education')" size="12" align="center"
+                [ngClass]="{'bg-white': type==='education'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="book-outline"></ion-icon><br>
+                    Education
+                  </ion-label>
+                </div>
+              </ion-col>
+
+              <ion-col (click)="change_view('occupation')" size="12" align="center"
+                [ngClass]="{'bg-white': type==='occupation'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="person-outline"></ion-icon><br>
+                    Occupation
+                  </ion-label>
+                </div>
+              </ion-col>
+
+              <ion-col (click)="change_view('diet')" size="12" align="center" [ngClass]="{'bg-white': type==='diet'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="fast-food-outline"></ion-icon><br>
+                    Diet
+                  </ion-label>
+                </div>
+              </ion-col>
+              <ion-col (click)="change_view('city')" size="12" align="center" [ngClass]="{'bg-white': type==='city'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="business-outline"></ion-icon><br>
+                    City
+                  </ion-label>
+                </div>
+              </ion-col>
+              <ion-col (click)="change_view('income')" size="12" align="center"
+                [ngClass]="{'bg-white': type==='income'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="wallet-outline"></ion-icon><br>
+                    Annual Income
+                  </ion-label>
+                </div>
+              </ion-col>
+              <ion-col (click)="change_view('manglik')" size="12" align="center"
+                [ngClass]="{'bg-white': type==='manglik'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="document-text-outline"></ion-icon><br>
+                    Manglik
+                  </ion-label>
+                </div>
+              </ion-col>
+              <ion-col (click)="change_view('age')" size="12" align="center" [ngClass]="{'bg-white': type==='age'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="man-outline"></ion-icon><br>
+                    Age
+                  </ion-label>
+                </div>
+              </ion-col>
+              <ion-col (click)="change_view('height')" size="12" align="center"
+                [ngClass]="{'bg-white': type==='height'}">
+                <div class="p-2 text-center">
+                  <ion-label align="center">
+                    <ion-icon class="oneem" name="swap-vertical-outline"></ion-icon><br>
+                    Height
+                  </ion-label>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+
+
+          <ion-col class="h-full" size="7" class="bg-gray-300" style=" height: 100%;">
+            <ion-row>
+
+              <ion-col size="12" *ngIf="type==='caste'">
+                <ion-radio-group name="f_caste" [ngModel]="f_caste" (ionChange)="set_value('caste',$event)">
+                  <ion-item *ngFor="let c of caste_detail;">
+                    <ion-label>{{c.caste_name}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{c.id}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+
+              <ion-col size="12" *ngIf="type==='education'">
+                <ion-radio-group name="f_education" [ngModel]="f_education" (ionChange)="set_value('education',$event)">
+                  <ion-item *ngFor="let e of education;">
+                    <ion-label>{{e.education_name}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{e.id}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='occupation'">
+                <ion-radio-group name="f_occupation" [ngModel]="f_occupation"
+                  (ionChange)="set_value('occupation',$event)">
+                  <ion-item *ngFor="let o of occupation;">
+                    <ion-label>{{o.occupation_name}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{o.id}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='diet'">
+                <ion-radio-group name="f_diet" [ngModel]="f_diet" (ionChange)="set_value('diet',$event)">
+                  <ion-item>
+                    <ion-label>Vegetarian</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="Vegetarian"></ion-radio>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Non-vegetarian</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="Non-Vegetarian"></ion-radio>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Eggetarian</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="Eggetarian"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='city'">
+                <ion-item>
+                  <ion-select class="form__input" name="state" [ngModel]="state_id" (ionChange)="filter_city($event)">
+                    <ion-select-option value="{{s.id}}" *ngFor="let s of state;">{{s.state_name}}</ion-select-option>
+                  </ion-select>
+                </ion-item>
+
+                <ion-radio-group name="f_city" [ngModel]="f_city" (ionChange)="set_value('city',$event)">
+                  <ion-item *ngFor="let c of city_updated;">
+                    <ion-label>{{c.city_name}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{c.id}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='income'">
+                <ion-radio-group name="f_income" [ngModel]="f_income" (ionChange)="set_value('income',$event)">
+                  <ion-item *ngFor="let ai of annual_income;">
+                    <ion-label>{{ai}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{ai}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='manglik'">
+                <ion-radio-group name="f_manglik" [ngModel]="f_manglik" (ionChange)="set_value('manglik',$event)">
+                  <ion-item *ngFor="let md of manglik_detail;">
+                    <ion-label>{{md}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{md}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='height'">
+                <ion-radio-group name="f_height" [ngModel]="f_height" (ionChange)="set_value('height',$event)">
+                  <ion-item *ngFor="let hd of height_detail;">
+                    <ion-label>{{hd}}</ion-label>
+                    <ion-radio slot="end" color="tertiary" value="{{hd}}"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-col>
+
+              <ion-col size="12" *ngIf="type==='age'">
+
+                <ion-range [ngModel]="f_age" name="age_range" pin="true" min="18" max="70" dualKnobs="true" step="1"
+                  snaps="true" ticks="false" color="primary" (ionChange)="set_value('age',$event)">
+                  <ion-label slot="start">18</ion-label>
+                  <ion-label slot="end">70</ion-label>
+                </ion-range>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-footer>
+      <ion-button expand="block" color="primary " (click)="submit_details(filter_form)">Submit</ion-button>
+    </ion-footer>
+  </form>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

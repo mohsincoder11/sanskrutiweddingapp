@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Franchise Enquiry</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p class="text-black text-xl pt-3 font-medium text-center p-2">Franchise Opportunities</p>
+  <!-- <div align="center" class="pt-5">
+    <ion-label class="text-xl"><b>Franchise Opportunities</b></ion-label>
+  </div> -->
+
+  <div class="ion-padding pt-2">
+    <form #form_register="ngForm">
+
+      <div class="ion-margin" class="ion-padding">
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="text" class="form__input capitalize" placeholder=" " ngModel name="user_name">
+          <label for="" class="form__label"> Name</label>
+
+        </div>
+        <p *ngIf="name_error" class="text-red-600 text-sm mb-3 pl-2">Please enter name. </p>
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="email" class="form__input" placeholder=" " ngModel name="email">
+          <label for="" class="form__label"> Email</label>
+        </div>
+        <p *ngIf="email_error" class="text-red-600 text-sm mb-3 pl-2">Please enter email. </p>
+
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="number" class="form__input" placeholder=" " ngModel name="mobile">
+          <label for="" class="form__label"> Mobile Number</label>
+        </div>
+        <p *ngIf="mobile_error" class="text-red-600 text-sm mb-3 pl-2">Please enter 10 digit mobile number.</p>
+
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="text" class="form__input" placeholder=" " ngModel name="city">
+          <label for="" class="form__label"> City</label>
+        </div>
+        <p *ngIf="city_error" class="text-red-600 text-sm mb-3 pl-2">Please enter city name.</p>
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="text" class="form__input" placeholder=" " ngModel name="address">
+          <label for="" class="form__label"> Address</label>
+        </div>
+        <p *ngIf="address_error" class="text-red-600 text-sm mb-3 pl-2">Please enter address.</p>
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="text" class="form__input" placeholder=" " ngModel name="exact_location">
+          <label for="" class="form__label"> Exact Location</label>
+        </div>
+        <p *ngIf="exact_location_error" class="text-red-600 text-sm mb-3 pl-2">Please enter exact location.</p>
+
+        <div class="form__div"
+          style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;"
+          mode="ios">
+          <input type="text" class="form__input" placeholder=" " ngModel name="message">
+          <label for="" class="form__label"> Message</label>
+        </div>
+        <p *ngIf="message_error" class="text-red-600 text-sm mb-3 pl-2">Please enter message.</p>
+
+
+        <ion-button expand="block" color="success" (click)="selectImage()" class="mb-3">
+          <ion-icon name="cloud-upload-outline"></ion-icon> &nbsp;&nbsp;{{document_name}}
+        </ion-button>
+
+        <p *ngIf="id_error" class="text-red-600 text-sm mt-4 mb-3 pl-2">Please upload valid document proof. </p>
+
+        <ion-button expand="block" color="primary" (click)="submit_details(form_register)">Submit</ion-button>
+
+      </div>
+    </form>
+
+  </div>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+
+</ion-content>

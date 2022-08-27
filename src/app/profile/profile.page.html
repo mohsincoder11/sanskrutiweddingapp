@@ -1,0 +1,463 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Profile </ion-title>
+    <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="bg-gray-100 pt-2 pb-3">
+  </div> -->
+  <div>
+    <ion-card class="bg-white ">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <div *ngIf="user_info.userprofilephoto && user_info.userprofilephoto.length>0">
+              <img class="thumb " src="{{url.imageurl}}{{user_info.userprofilephoto[0].file_name}}" alt="">
+            </div>
+            <div *ngIf="user_info.userprofilephoto.length<1">
+              <img class="rounded-t-md img2" src="assets/myimage.jpg" />
+            </div>
+
+          </ion-col>
+          <ion-col size="6">
+            <div>
+              <p class="text-xs  ">
+                <span><b>Name :</b> {{user_info.name ? user_info.name : 'N/A'}}</span><br>
+                <span><b>Marital Status :</b> {{user_info.marital_status ? user_info.marital_status : 'N/A'}}</span><br>
+                <span><b>Age :</b> {{user_info.age ? user_info.age : 'N/A' }}</span>
+
+              </p>
+            </div>
+          </ion-col>
+          <!-- <ion-col size="3" (click)="scrollToBottom()">
+            <div align="center">
+              <div mode="ios">
+
+                <ion-icon class=" text-lg mt-2" name="cloud-upload"></ion-icon>
+
+              </div>
+              <label for="" class=" text-xs">Upload Photos</label>
+               
+                    <p>Upload Photo</p>
+            </div>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+
+
+
+
+  <div class="mt-2">
+    <ion-segment (ionChange)="segmentChanged($event)" scrollable value="all">
+      <ion-segment-button value="basic">
+        <ion-label color="primary">Basic Details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="career">
+        <ion-label color="primary">Career & Education </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="lifestyle">
+        <ion-label color="primary">Lifestyle </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="family">
+        <ion-label color="primary">Family </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="communication">
+        <ion-label color="primary">Communication </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div class="p-2" *ngIf="switchTab == 'basic'">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label class="text-sm">Birthdate </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label class="text-sm"><b>{{user_info.dob ? (user_info.dob|date: 'dd/MM/yyyy') : 'N/A' }}</b></ion-label>
+        </ion-col>
+        <ion-col size="2">
+          <div routerLink="/basicdetailsform">
+            <ion-icon class="text-600 primary-color text-2xl pl-6" name="create"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Religion </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.religion ? user_info.religion : 'N/A'}}</b></ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm"> Mother Tongue </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.language ? user_info.language : 'N/A'}}</b></ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Caste </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.caste ? user_info.caste['caste_name'] : 'N/A'}}</b></ion-label>
+        </ion-col>
+       
+        <ion-col size="5">
+          <ion-label class="text-sm">Sub Caste </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.subcaste ? user_info.subcaste['subcaste_name'] :'N/A'}}</b>
+          </ion-label>
+        </ion-col> <ion-col size="5">
+          <ion-label class="text-sm">Marital Status </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.marital_status ? user_info.marital_status : 'N/A'}}</b></ion-label>
+        </ion-col>
+
+        <ion-col size="5">
+          <ion-label class="text-sm">Mangalik </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.manglik ? user_info.manglik :'N/A' }}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Horoscope </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.horescope_match ? user_info.horescope_match : 'N/A'}}</b>
+          </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Height </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.height ? user_info.height : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm"> Blood Group </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.blood_group ? user_info.blood_group : 'N/A'}}</b></ion-label>
+        </ion-col>
+
+
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="p-2" *ngIf="switchTab === 'career'">
+    <ion-grid fixed>
+      <ion-row>
+
+        <ion-col size="5">
+          <ion-label class="text-sm">Highest Education </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label class="text-sm"><b>{{user_info.education ? user_info.education['education_name'] : 'N/A'}}</b>
+          </ion-label>
+        </ion-col>
+        <ion-col size="2">
+          <div routerLink="/careerandeducationform">
+            <ion-icon class="text-600 primary-color text-2xl pl-6" name="create"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Annual Yearly Income </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.annual_income ? user_info.annual_income : 'N/A'}}</b></ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Employed In </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.company_name ? user_info.company_name : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm"> Occupation </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm">
+            <b>{{user_info.occupationcategory ? user_info.occupationcategory['occupation_category_name'] : 'N/A'}}</b>
+          </ion-label>
+        </ion-col>
+
+
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="p-2" *ngIf="switchTab === 'lifestyle'">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label class="text-sm">Diet </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label class="text-sm"><b>{{user_info.diet ? user_info.diet : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="2">
+          <div routerLink="/lifestyleform">
+            <ion-icon class="text-600 primary-color text-2xl pl-6" name="create"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Drink </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.drink ? user_info.drink : 'N/A'}}</b></ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Smoke </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.smoke ? user_info.smoke : 'N/A'}}</b> </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="p-2" *ngIf="switchTab === 'family'">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label class="text-sm">Family Type </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label class="text-sm"><b>{{user_info.family_type ? user_info.family_type : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="2">
+          <div routerLink="/familyform">
+            <ion-icon class="text-600 primary-color text-2xl pl-6" name="create"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Family Income </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.family_income ? user_info.family_income : 'N/A'}}</b></ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Father Occupation </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.father_occupation ? user_info.father_occupation : 'N/A'}}</b>
+          </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Mother Occupation </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.mother_occupation ? user_info.mother_occupation : 'N/A'}}</b>
+          </ion-label>
+        </ion-col>
+
+        <ion-col size="5">
+          <ion-label class="text-sm">Sister </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.sister ? user_info.sister : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Brother </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.brother ? user_info.brother : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Sister Married </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b>{{user_info.sister_married ? user_info.sister_married : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Brother Married</ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.brother_married ? user_info.brother_married : 'N/A'}}</b>
+          </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">About Family </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.about_family ? user_info.about_family : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">About Myself</ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"><b> {{user_info.about_myself ? user_info.about_myself : 'N/A'}}</b> </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="p-2" *ngIf="switchTab === 'communication'">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="5">
+          <ion-label class="text-sm">Address </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="4">
+          <ion-label class="text-sm"> <b>{{user_info.address ? user_info.address : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="2">
+          <div routerLink="/communicationform">
+            <ion-icon class="text-600 primary-color text-2xl pl-6" name="create"></ion-icon>
+          </div>
+        </ion-col>
+
+        <ion-col size="5">
+          <ion-label class="text-sm">State </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.state ? user_info.state['state_name'] : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">City </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.city ? user_info.city['city_name'] : 'N/A'}}</b> </ion-label>
+        </ion-col>
+        <ion-col size="5">
+          <ion-label class="text-sm">Pincode </ion-label>
+        </ion-col>
+        <ion-col size="1">
+          <ion-label class="text-sm"> <b>:</b> </ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="text-sm"> <b>{{user_info.pincode ? user_info.pincode : 'N/A'}}</b> </ion-label>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="bg-gray-100 pt-2 pb-3 mt-2">
+    <div class="flex justify-start p-2">
+      <div>
+        <ion-label class="text-grey-600  text-lg"><b>Photo Gallery</b></ion-label>
+      </div>
+    </div>
+    <ion-card class="bg-white mt-2">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" class="mt-2 upload_div">
+            <div align="center" (click)="selectImage()">
+              <div mode="ios">
+                <ion-icon class="text-lg mt-2" name="cloud-upload"></ion-icon>
+              </div>
+              <label for="" class="text-xs">Upload Photos</label>
+            </div>
+          </ion-col>
+         
+          <ion-col size="4" *ngFor="let img of user_info.userphoto"> 
+            <ion-icon class="trash_icon" name="trash-outline" (click)="delete_image(img.id)"></ion-icon>
+            <img src="{{url.imageurl}}{{img.file_name}}"  class="rounded-md img1">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+
+</ion-content>

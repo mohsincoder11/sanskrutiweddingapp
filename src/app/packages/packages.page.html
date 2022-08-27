@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start" routerLink="/dashboard">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Premium </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <div class="bg-gray-200 h-64 p-2">
+      <div align="center">
+        <img src="assets/package3.jpg" />
+      </div>
+
+      <div class="flex justify-center ml-2 pb-5 mt-2">
+        <div class="border-2 border-gray-400 rounded-full   hover:bg-white  px-1 py-1 mr-2 w-12">
+          <p class="text-center" (click)="gotoSlide(0)"><b>B</b></p>
+        </div>
+        <div class="border-2 border-gray-400 rounded-full hover:bg-white  px-1 py-1 mr-2 w-12">
+          <p class="text-center" (click)="gotoSlide(1)"><b>S</b></p>
+        </div>
+
+        <div class="border-2 rounded-full border-gray-400 hover:bg-white  px-1 py-1 mr-2 w-12">
+          <p class="text-center" (click)="gotoSlide(2)"><b>G</b></p>
+        </div>
+
+
+        <div class="border-2 rounded-full border-gray-400 hover:bg-white  px-1 py-1 mr-2 w-12">
+          <p class="text-center" (click)="gotoSlide(3)"><b>P</b></p>
+        </div>
+      </div>
+
+    </div>
+    <div style="z-index: 1000;">
+      <ion-slides class="slider" [options]="slideOptions" pager="false" #slider
+        (ionSlidesDidLoad2)="slidesDidLoad2(slider)">
+        <ion-slide *ngFor="let pii of package_info;">
+          <ion-card class=" card  rounded-md p-2 pl-4 shadow-md">
+
+            <p class="text-black text-lg "><b>{{pii.package_name}}</b> {{pii.duration}} MONTHS</p>
+            <hr />
+            <p class="text-black text-xl "><b>₹ {{pii.price}} </b><br><span class="text-sm text-gray-600 ">₹ {{(pii.price/pii.duration)| number:'1.0-0'}} Per
+                month</span></p>
+            <p class="text-md text-black font-medium " align="left ">
+              <ion-icon class="text-lg text-green-700" name="checkmark"></ion-icon> Send Unlimited Messages
+            </p>
+            <p class="text-md text-black font-medium " align="left ">
+              <ion-icon class="text-lg text-green-700" name="checkmark"></ion-icon> View Upto {{pii.contacts}} Contact
+              Numbers
+            </p>
+            <div class="mt-3">
+              <ion-button color="primary" class="b1" (click)="purchase_subscription(pii.id)">Continue</ion-button>
+            </div>
+          </ion-card>
+        </ion-slide>
+
+      </ion-slides>
+    </div>
+  </div>
+
+  <div>
+
+  </div>
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+</ion-content>

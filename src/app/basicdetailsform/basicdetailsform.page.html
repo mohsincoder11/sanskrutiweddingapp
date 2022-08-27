@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons color="light" slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> Basic Form </ion-title>
+    <!-- <ion-icon slot="end" color="light" class="text-lg pr-2" name="notifications-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ion-margin" class="ion-padding pt-4">
+    
+    <form #basic_detail="ngForm" >
+      <input type="hidden" name="id" [ngModel]="user_info.id">
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <input type="date" class="form__input" placeholder=" " name="dob" [ngModel]="user_info.dob">
+        <label for="" class="form__label">BirthDate</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="language" [ngModel]="user_info.language">
+          <ion-select-option value="">Select Mother Tongue</ion-select-option>
+          <ion-select-option value="l" *ngFor="let l of language_detail;">{{l}}</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Mother Tongue</label>
+      </div>
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="religion" [ngModel]="user_info.religion">
+
+          <ion-select-option value="">Select Religion</ion-select-option>
+          <ion-select-option value="{{r}}" *ngFor="let r of religion_detail;">{{r}}</ion-select-option>
+
+        </ion-select>
+        <label for="" class="form__label">Select Religion</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="caste_id" [ngModel]="user_info.caste_id">
+
+          <ion-select-option value="">Select Caste</ion-select-option>
+          <ion-select-option value="{{c.id}}" *ngFor="let c of caste_detail;">{{c.caste_name}}</ion-select-option>
+
+
+        </ion-select>
+        <label for="" class="form__label">Select Cast</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+        <ion-select class="form__input" name="subcaste_id" [ngModel]="user_info.subcaste_id">
+
+          <ion-select-option value="">Select Sub Caste</ion-select-option>
+          <ion-select-option value="{{sc.id}}" *ngFor="let sc of subcaste_detail;">{{sc.subcaste_name}}
+          </ion-select-option>
+
+
+        </ion-select>
+        <label for="" class="form__label">Select Sub Cast</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="marital_status" [ngModel]="user_info.marital_status">
+
+          <ion-select-option value="">Select Marital Status</ion-select-option>
+          <ion-select-option value="{{ms}}" *ngFor="let ms of marital_status_detail;">{{ms}}</ion-select-option>
+
+        </ion-select>
+        <label for="" class="form__label">Select Marital Status</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="manglik" [ngModel]="user_info.manglik">
+          <ion-select-option value="">Select Manglic Status</ion-select-option>
+          <ion-select-option value="{{md}}" *ngFor="let md of manglik_detail;">{{md}}</ion-select-option>
+
+        </ion-select>
+        <label for="" class="form__label">Select Manglik Status</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="horescope_match" [ngModel]="user_info.horescope_match">
+
+          <ion-select-option value="">Horoscope Match?</ion-select-option>
+          <ion-select-option value="Must">Must</ion-select-option>
+          <ion-select-option value="Not Necessary">Not Necessary</ion-select-option>
+
+        </ion-select>
+        <label for="" class="form__label">Select Horoscope Match</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="height" [ngModel]="user_info.height">
+
+          <ion-select-option value="">Select Height</ion-select-option>
+          <ion-select-option value="{{hd}}" *ngFor="let hd of height_detail;">{{hd}}</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Height</label>
+      </div>
+
+      <div class="form__div"
+        style="border: solid 1px; color: rgb(168, 167, 167); border-radius: 10px; font-family: sans-serif;" mode="ios">
+
+        <ion-select class="form__input" name="blood_group" [ngModel]="user_info.blood_group">
+
+          <ion-select-option value="">Select Blood Group</ion-select-option>
+          <ion-select-option value="{{bd}}" *ngFor="let bd of blood_group_detail;">{{bd}}</ion-select-option>
+        </ion-select>
+        <label for="" class="form__label">Select Blood Group</label>
+      </div>
+
+      <ion-button expand="block" color="primary" (click)="submit_form(basic_detail)">Submit</ion-button>
+    </form>
+  </div>
+
+  <div class="loader" *ngIf="loader_visibility">
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  </div>
+
+</ion-content>
